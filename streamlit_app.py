@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as mtick
 import io
 import os # 导入 os 模块用于文件路径操作
+from matplotlib.font_manager import FontProperties # 导入 FontProperties
 
 # --- 设置页面基本信息 ---
 st.set_page_config(layout="wide", page_title="Veeva China 营收预测仪表盘")
@@ -12,8 +13,21 @@ st.title("📊 Veeva 中国商务实施服务营收预测")
 st.markdown("---")
 
 # --- 解决中文乱码和负号问题 ---
-plt.rcParams['font.sans-serif'] = ['PingFang SC']
-plt.rcParams['axes.unicode_minus'] = False
+# 指定字体文件的路径
+# 确保 'SourceHanSansSC-Regular.otf' 文件和你的 Python 脚本在同一个文件夹里
+font_path = 'SourceHanSansSC-Regular.otf' 
+
+# 检查字体文件是否存在，以防万一
+if not os.path.exists(font_path):
+    st.error(f"字体文件 '{font_path}' 未找到。请确保字体文件已放在脚本同一目录下。")
+    st.stop() # 如果字体文件不存在，停止应用
+
+# 创建 FontProperties 对象
+font_prop = FontProperties(fname=font_path)
+
+# 将字体设置应用到 Matplotlib
+plt.rcParams['font.family'] = font_prop.get_name() # 使用 font_prop.get_name() 获取字体名称
+plt.rcParams['axes.unicode_minus'] = False # 解决保存图像时负号 '-' 显示为方块的问题
 # ------------------------------------
 
 # --- 初始数据 (硬编码在脚本中) ---
