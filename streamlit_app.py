@@ -35,8 +35,8 @@ plt.rcParams['axes.unicode_minus'] = False # 解决保存图像时负号 '-' 显
 initial_main_data_csv_string = """
 Year,Total Impl. Team Service Revenue (M USD),CRM Project Revenue (M USD),New Products Project Revenue (M USD),MNC Project Revenue (M USD),Domestic Project Revenue (M USD)
 2025,5.50,4.95,0.55,5.44,0.06
-2026,3.85,3.08,0.77,3.47,0.39
-2027,3.08,2.16,0.92,2.46,0.62
+2026,4.05,3.24,0.81,3.65,0.40
+2027,4.08,2.86,1.22,3.26,0.82
 """
 
 initial_new_products_types_csv_string = """
