@@ -7,9 +7,9 @@ import os # 导入 os 模块用于文件路径操作
 from matplotlib.font_manager import FontProperties # 导入 FontProperties
 
 # --- 设置页面基本信息 ---
-st.set_page_config(layout="wide", page_title="Veeva China 营收预测仪表盘")
+st.set_page_config(layout="wide", page_title="China 营收预测仪表盘")
 
-st.title("📊 Veeva 中国商务实施服务营收预测")
+st.title("📊 中国商务实施服务营收预测")
 st.markdown("---")
 
 # --- 解决中文乱码和负号问题 ---
